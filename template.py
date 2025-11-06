@@ -29,6 +29,8 @@ list_of_files = [
     f"{part_2}/orchestrator.py",
     f"{part_2}/tokenizer.py",
     f"{part_2}/dataset.py",
+    f"{part_2}/tiny.txt",
+    f"{part_2}/tiny_hi.txt",
     f"{part_2}/utils.py",
     f"{part_2}/model_gpt.py",
     f"{part_2}/train.py",
