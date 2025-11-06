@@ -2,9 +2,13 @@ import os
 from pathlib import Path
 import logging
 
+
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
+
 part_1 = "Part_01_Core_Transformer_Architecture"
+
+
 
 list_of_files = [
     f"{part_1}/attn_mask.py",
@@ -19,7 +23,6 @@ list_of_files = [
     f"{part_1}/single_head.py",
     f"{part_1}/vis_utils.py"
 ]
-
 
 
 
