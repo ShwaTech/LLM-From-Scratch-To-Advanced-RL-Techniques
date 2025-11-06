@@ -59,6 +59,7 @@ class Block(nn.Module):
         x = x + self.ffn(self.ln2(x))
         return x
 
+
 # =============
 # Tiny GPT
 # =============
