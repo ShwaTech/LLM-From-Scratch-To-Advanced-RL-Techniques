@@ -9,7 +9,6 @@
 #     multi_head.py                 # 1.4 multi-head attention (with shape tracing)
 #     ffn.py                        # 1.5 feed-forward network (GELU, width = mult*d_model)
 #     block.py                      # 1.6 Transformer block (residuals + LayerNorm)
-#     attn_mask.py                  # causal mask helpers
 #     vis_utils.py                  # plotting helpers (matrices & attention maps)
 #     demo_mha_shapes.py            # prints explicit matrix multiplications & shapes step-by-step
 #     demo_visualize_multi_head.py  # saves attention heatmaps per head (grid)
