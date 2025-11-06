@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
 part_1 = "Part_01_Core_Transformer_Architecture"
+part_2 = "Part_02_Training_A_Tiny_LLM"
 
 
 
@@ -24,6 +25,17 @@ list_of_files = [
     f"{part_1}/vis_utils.py",
     f"{part_1}/tests/test_attn_math.py",
     f"{part_1}/tests/test_causal_mask.py",
+    
+    f"{part_2}/orchestrator.py",
+    f"{part_2}/tokenizer.py",
+    f"{part_2}/dataset.py",
+    f"{part_2}/utils.py",
+    f"{part_2}/model_gpt.py",
+    f"{part_2}/train.py",
+    f"{part_2}/sample.py",
+    f"{part_2}/eval_loss.py",
+    f"{part_2}/tests/test_tokenizer.py",
+    f"{part_2}/tests/test_dataset_shift.py"
 ]
 
 

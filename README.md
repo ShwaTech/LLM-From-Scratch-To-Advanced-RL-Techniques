@@ -12,6 +12,8 @@ uv init
 uv add -r requirements.txt
 ```
 
+---
+
 ## Part 0 — Foundations & Mindset
 
 - **0.1** Understanding the high-level LLM training pipeline (pretraining → finetuning → alignment)
