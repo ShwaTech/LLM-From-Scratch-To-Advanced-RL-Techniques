@@ -21,7 +21,9 @@ list_of_files = [
     f"{part_1}/orchestrator.py",
     f"{part_1}/pos_encoding.py",
     f"{part_1}/single_head.py",
-    f"{part_1}/vis_utils.py"
+    f"{part_1}/vis_utils.py",
+    f"{part_1}/tests/test_attn_math.py",
+    f"{part_1}/tests/test_causal_mask.py",
 ]
 
 
