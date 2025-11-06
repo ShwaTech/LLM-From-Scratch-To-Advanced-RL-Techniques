@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 part_1 = "Part_01_Core_Transformer_Architecture"
 part_2 = "Part_02_Training_A_Tiny_LLM"
 part_3 = "Part_03_Modernizing_The_Architecture"
+part_4 = "Part_04_Scaling_Up"
 
 
 
@@ -54,6 +55,19 @@ list_of_files = [
     f"{part_3}/tests/test_rmsnorm.py",
     f"{part_3}/tests/test_rope_apply.py",
     f"{part_3}/tests/test_kvcache_shapes.py",
+    
+    f"{part_4}/orchestrator.py",
+    f"{part_4}/tokenizer_bpe.py",
+    f"{part_4}/dataset_bpe.py",
+    f"{part_4}/lr_scheduler.py",
+    f"{part_4}/amp_accum.py",
+    f"{part_4}/checkpointing.py",
+    f"{part_4}/logger.py",
+    f"{part_4}/train.py",
+    f"{part_4}/sample.py",
+    f"{part_4}/tests/test_tokenizer_bpe.py",
+    f"{part_4}/tests/test_scheduler.py",
+    f"{part_4}/tests/test_resume_shapes.py",
     
 ]
 
