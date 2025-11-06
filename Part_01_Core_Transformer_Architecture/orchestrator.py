@@ -4,6 +4,7 @@
 #     orchestrator.py               # runs demos/tests/visualizations for Part 1
 #     pos_encoding.py               # 1.1 positional encodings (learned + sinusoidal)
 #     attn_numpy_demo.py            # 1.2 self-attention math with tiny numbers (NumPy)
+#     attn_mask.py                  # causal mask helpers
 #     single_head.py                # 1.3 single attention head (PyTorch)
 #     multi_head.py                 # 1.4 multi-head attention (with shape tracing)
 #     ffn.py                        # 1.5 feed-forward network (GELU, width = mult*d_model)
