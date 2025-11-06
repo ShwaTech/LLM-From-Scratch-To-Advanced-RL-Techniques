@@ -50,6 +50,7 @@ list_of_files = [
     f"{part_3}/block_modern.py",
     f"{part_3}/model_modern.py",
     f"{part_3}/demo_generate.py",
+    f"{part_3}/utils.py",
     f"{part_3}/tests/test_rmsnorm.py",
     f"{part_3}/tests/test_rope_apply.py",
     f"{part_3}/tests/test_kvcache_shapes.py",
