@@ -61,7 +61,7 @@ def main():
         model = torch.compile(model)
     
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr, betas=(0.9, 0.95), weight_decay=args.weight_decay)
-    scaler = torch.amp.grad_scaler.GradScaler(enabled=(args.amp and args.device.type == 'cuda'))
+    scaler = torch.cuda.amp.GradScaler(enabled=(args.amp and args.device.type == 'cuda'))
     
     best_val = float('inf')
     t0 = time.time()
@@ -70,7 +70,7 @@ def main():
     for step in range(1, args.steps + 1):
         xb, yb = ds.get_batch('train', args.batch_size, args.device)
         
-        with torch.amp.autocast_mode.autocast(enabled=(args.amp and args.device.type == 'cuda')):
+        with torch.cuda.amp.autocast(enabled=(args.amp and args.device.type == 'cuda')):
             _, loss = model(xb, yb)
         
         opt.zero_grad(set_to_none=True)
