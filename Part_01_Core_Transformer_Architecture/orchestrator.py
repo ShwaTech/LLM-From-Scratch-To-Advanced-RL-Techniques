@@ -17,7 +17,7 @@
 #       test_attn_math.py           # correctness: tiny example vs PyTorch single-head
 #       test_causal_mask.py         # verifies masking behavior
 #
-# NOTICE ON IMPORTS
+# NOTE ON IMPORTS
 # ----------------
 # All imports are LOCAL. Run from inside `Part_01_Core_Transformer_Architecture/`.
 # Example quickstart (CPU ok):
