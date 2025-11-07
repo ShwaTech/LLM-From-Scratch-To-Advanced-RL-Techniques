@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 from pathlib import Path as _P
 sys.path.append(str(_P(__file__).resolve().parents[1]/'Part_03_Modernizing_The_Architecture'))
-from model_modern import GPTModern  # type: ignore
+from model_modern import GPTModern
 
 from tokenizer_bpe import BPETokenizer
 
