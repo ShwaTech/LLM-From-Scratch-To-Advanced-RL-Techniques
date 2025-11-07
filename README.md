@@ -8,7 +8,7 @@ Build an end-to-end Large Language Model from scratch: implement transformers, t
 
 <p align="center">
   <a href="https://shwatech.github.io">
-    <img src="./assets/ShwaTech Main Logo Circled.png" alt="ShwaTech" height="450">
+    <img src="./assets/ShwaTech.png" alt="ShwaTech" height="450">
   </a>
 </p>
 
