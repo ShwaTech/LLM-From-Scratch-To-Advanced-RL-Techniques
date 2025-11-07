@@ -2,7 +2,17 @@
 
 Build an end-to-end Large Language Model from scratch: implement transformers, train a tiny LLM, modernize with RoPE and RMSNorm, scale training, add Mixture-of-Experts, perform Supervised Fine-Tuning, train a Reward Model, and apply RLHF with PPO and also RLHF with GRPO for alignment and reinforcement learning.
 
-[![ShwaTech](./assets/ShwaTech.png)](https://shwatech.github.io)
+---
+
+<!-- [![ShwaTech](./assets/ShwaTech.png)](https://shwatech.github.io) -->
+
+<p align="center">
+  <a href="https://shwatech.github.io">
+    <img src="./assets/ShwaTech Main Logo Circled.png" alt="ShwaTech" height="450">
+  </a>
+</p>
+
+---
 
 ## Project Setup
 
@@ -11,6 +21,10 @@ uv init
 
 uv add -r requirements.txt
 ```
+
+---
+
+![GPT_Assistant_Training_Pipeline](./assets/GPT_Assistant_Training_Pipeline.png)
 
 ---
 
