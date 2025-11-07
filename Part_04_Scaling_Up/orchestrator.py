@@ -19,7 +19,7 @@
 #   cd Part_04_Scaling_Up
 #   python orchestrator.py --demo      # tiny smoke run on ../tiny.txt
 #   pytest -q
-#   tensorboard --logdir=runs/ScalingUp-demo
+#   tensorboard --logdir=runs/scalingup-demo
 
 import argparse, pathlib, subprocess, sys, shlex
 
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     
     # 2) optional demo (quick overfit on tiny file)
     if args.demo:
-        run("python train.py --data ../Part_02_Training_A_Tiny_LLM/tiny.txt --out runs/ScalingUp-demo --bpe --vocab_size 8000 --epochs 1 --steps 300 --batch_size 16 --block_size 128 --n_layer 2 --n_head 2 --n_embd 128 --mixed_precision --grad_accum_steps 2 --log tensorboard")
-        run("python sample.py --ckpt runs/ScalingUp-demo/model_last.pt --tokens 100 --prompt 'Generate a short story'")
+        run("python train.py --data ../Part_02_Training_A_Tiny_LLM/tiny.txt --out runs/scalingup-demo --bpe --vocab_size 8000 --epochs 1 --steps 300 --batch_size 16 --block_size 128 --n_layer 2 --n_head 2 --n_embd 128 --mixed_precision --grad_accum_steps 2 --log tensorboard")
+        run("python sample.py --ckpt runs/scalingup-demo/model_last.pt --tokens 100 --prompt 'Generate a short story'")
     
     print("\nPart 4 checks complete. ✅")

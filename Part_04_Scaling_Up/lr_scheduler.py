@@ -1,3 +1,26 @@
+"""
+
+🚀 Warmup + Cosine Learning Rate Scheduler Explained
+The Problem It Solves:
+Training large models (like Transformers) with AdamW or similar optimizers is sensitive to the learning rate.
+
+If you start with a large LR immediately, early gradients can explode or destabilize training.
+
+So instead of jumping to the full LR on step 1, we:
+    1. Gradually increase LR during a warmup period.
+    2. Then gradually decrease LR following a smooth cosine decay.
+
+That’s the Warmup + Cosine schedule.
+
+Phase	        | Description	                         | Benefit
+----------------|----------------------------------------|--------------------------------------
+Warmup	        | Gradually increases LR from 0 → max	 | Prevents instability in early steps
+Cosine Decay	| Smoothly decreases LR to 0	         | Stabilizes convergence
+Combined	    | “WarmupCosineLR”	                     | Gold-standard scheduler for LLMs
+------------------------------------------------------------------------------------------------
+
+"""
+
 import math
 
 
