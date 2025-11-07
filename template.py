@@ -11,6 +11,7 @@ part_2 = "Part_02_Training_A_Tiny_LLM"
 part_3 = "Part_03_Modernizing_The_Architecture"
 part_4 = "Part_04_Scaling_Up"
 part_5 = "Part_05_Mixture_of_Experts"
+part_6 = "Part_06_Supervised_Fine_Tuning"
 
 
 
@@ -80,6 +81,18 @@ list_of_files = [
     f"{part_5}/tests/test_gate_shapes.py",
     f"{part_5}/tests/test_moe_forward.py",
     f"{part_5}/tests/test_hybrid_block.py",
+    
+    f"{part_6}/orchestrator.py",
+    f"{part_6}/formatters.py",
+    f"{part_6}/dataset_sft.py",
+    f"{part_6}/collator_sft.py",
+    f"{part_6}/curriculum.py",
+    f"{part_6}/evaluate.py",
+    f"{part_6}/train_sft.py",
+    f"{part_6}/sample_sft.py",
+    f"{part_6}/tests/test_formatter.py",
+    f"{part_6}/tests/test_masking.py",
+    
 ]
 
 
