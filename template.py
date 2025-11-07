@@ -10,6 +10,7 @@ part_1 = "Part_01_Core_Transformer_Architecture"
 part_2 = "Part_02_Training_A_Tiny_LLM"
 part_3 = "Part_03_Modernizing_The_Architecture"
 part_4 = "Part_04_Scaling_Up"
+part_5 = "Part_05_Mixture_of_Experts"
 
 
 
@@ -69,6 +70,16 @@ list_of_files = [
     f"{part_4}/tests/test_scheduler.py",
     f"{part_4}/tests/test_resume_shapes.py",
     
+    f"{part_5}/orchestrator.py",
+    f"{part_5}/README.md",
+    f"{part_5}/gating.py",
+    f"{part_5}/experts.py",
+    f"{part_5}/moe.py",
+    f"{part_5}/block_hybrid.py",
+    f"{part_5}/demo_moe.py",
+    f"{part_5}/tests/test_gate_shapes.py",
+    f"{part_5}/tests/test_moe_forward.py",
+    f"{part_5}/tests/test_hybrid_block.py",
 ]
 
 
