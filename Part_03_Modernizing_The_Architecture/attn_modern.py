@@ -1,3 +1,38 @@
+"""
+
+💡 Sliding Window Attention is an efficient variant of self-attention where each token only attends to
+a fixed number of nearby tokens (a local window) instead of all previous tokens.
+This reduces computational and memory complexity from O(n²) to O(n × w),
+enabling much longer context lengths. While it captures strong local dependencies and speeds up training
+and inference, it can miss long-range relationships — often mitigated by combiningit
+with a few global attention tokens or mechanisms like Attention Sinks.
+
+💡 Attention Sinks is a mechanism that introduces special tokens — called “sink tokens” — which
+act as global aggregators or information hubs inside a transformer’s attention mechanism.
+These tokens (sometimes just one or a few per layer) are trained to absorb
+information from all other tokens and optionally broadcast global context back to them.
+
+🧩 Attention sinks are special tokens (or positions) in the attention mechanism that are always
+globally attended to — regardless of sliding window limits.
+
+🧩 Attention sinks == the concept (specific tokens or positions that are globally visible).
+
+🧩 Sink tokens act as bridges across the whole text.
+
+💡 Attention Sinks + Sliding-Window Self-Attention — explained clearly
+Short version: a sink (aka global / aggregator token) is a small set of special tokens that
+connect distant local windows. When used with sliding-window attention, each token attends to a nearby window
+plus the sink(s). The sink attends (or is attended to) more broadly, so information can flow
+across windows without full O(n²) attention.
+
+
+💡 What is Grouped Query Attention (GQA)?
+Grouped Query Attention simplifies how LLMs understand large amounts of text by bundling similar pieces together. This makes the model faster and smarter, as it can focus on groups of words at a time instead of each word individually.
+Grouped Query Attention (GQA) is a method that interpolates between multi-query attention (MQA) and multi-head attention (MHA) in Large Language Models (LLMs). It aims to achieve the quality of MHA while maintaining the speed of MQA.
+GQA divides query heads into G groups, each of which shares a single key head and value head.
+
+"""
+
 from __future__ import annotations
 import math, torch
 import torch.nn as nn
@@ -28,7 +63,7 @@ class CausalSelfAttentionModern(nn.Module):
         self.d_head = n_embd // n_head
         
         # Separate projections for Q vs K/V (sizes differ under GQA)  ← CHANGED
-        self.wq = nn.Linear(n_embd, self.n_head   * self.d_head, bias=False)
+        self.wq = nn.Linear(n_embd, self.n_head * self.d_head, bias=False)
         self.wk = nn.Linear(n_embd, self.n_kv_head * self.d_head, bias=False)
         self.wv = nn.Linear(n_embd, self.n_kv_head * self.d_head, bias=False)
         self.proj = nn.Linear(n_embd, n_embd, bias=False)

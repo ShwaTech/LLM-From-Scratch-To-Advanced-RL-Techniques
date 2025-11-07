@@ -1,15 +1,15 @@
 """
 
-The Swish activation function is similar in shape to ReLU, as it's close to zero when x is negative,
+💡  The Swish activation function is similar in shape to ReLU, as it's close to zero when x is negative,
 and close to x when x is positive.
 It is defined as Swish(x) = x * sigmoid(ßx), where ß is a learnable parameter.
 The cool thing about having a learnable parameter in the activation function is that the network learns how to better shape it.
 
-GLU stands for Gated Linear Unit, which is a rather complicated activation function
+🧠 GLU stands for Gated Linear Unit, which is a rather complicated activation function
 consisting of two linear transformations, one of them activated by sigmoid,
 so that GLU(x) = (Wx+b)*sigmoid(Vx+c).
 
-SwiGLU is just a portmanteau of Swish and GLU, and as such,
+🧠 SwiGLU is just a portmanteau of Swish and GLU, and as such,
 it's simply a GLU that is activated using the Swish function instead of a sigmoid,
 so that SwiGLU(x) = (Wx+b)*Swish(Vx+c).
 
