@@ -183,7 +183,7 @@ def _extract_config_from_model(model) -> dict:
             return cfg
         
         try:
-            from swiglu import SwiGLU  # optional
+            from swiglu import SwiGLU  # type: ignore
         except Exception:
             class SwiGLU: pass
         

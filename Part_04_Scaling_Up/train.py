@@ -9,7 +9,7 @@ import torch.nn as nn
 # so we can import Part 3 model
 from pathlib import Path as _P
 sys.path.append(str(_P(__file__).resolve().parents[1] / 'Part_03_Modernizing_The_Architecture'))
-from model_modern import GPTModern
+from model_modern import GPTModern # type: ignore
 
 from tokenizer_bpe import BPETokenizer
 from dataset_bpe import make_loader
