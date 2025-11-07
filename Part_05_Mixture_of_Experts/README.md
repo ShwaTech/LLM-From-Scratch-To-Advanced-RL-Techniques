@@ -1,5 +1,7 @@
 # Part 5 — Mixture-of-Experts (MoE)
 
+[![Mixture-of-Experts (MoE)](./Images/MoE_Architecture.webp)](https://arxiv.org/pdf/2407.06204)
+
 This part focuses purely on the **Mixture-of-Experts feed-forward component**.  
 We are **not** implementing self-attention in this module.  
 In a full transformer block, the order is generally:
