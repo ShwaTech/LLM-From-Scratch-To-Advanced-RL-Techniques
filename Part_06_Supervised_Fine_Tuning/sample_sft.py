@@ -4,7 +4,7 @@ import argparse, torch
 # Reuse GPTModern
 import sys
 from pathlib import Path as _P
-sys.path.append(str(_P(__file__).resolve().parents[1]/'part_3'))
+sys.path.append(str(_P(__file__).resolve().parents[1]/'Part_03_Modernizing_The_Architecture'))
 from model_modern import GPTModern  # noqa: E402
 
 from collator_sft import SFTCollator
@@ -23,7 +23,7 @@ def main():
     p.add_argument('--tokens', type=int, default=80)
     p.add_argument('--temperature', type=float, default=0.2)
     p.add_argument('--cpu', action='store_true')
-    p.add_argument('--bpe_dir', type=str, default='../part_4/runs/part4-demo/tokenizer')
+    p.add_argument('--bpe_dir', type=str, default='../Part_04_Scaling_Up/runs/scalingup-demo/tokenizer')
     args = p.parse_args()
     
     device = torch.device('cuda' if torch.cuda.is_available() and not args.cpu else 'cpu')

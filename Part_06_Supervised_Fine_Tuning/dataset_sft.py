@@ -1,6 +1,6 @@
+from __future__ import annotations
 import os
 import traceback
-from __future__ import annotations
 from typing import List, Dict, Tuple
 from dataclasses import dataclass
 from formatters import Example

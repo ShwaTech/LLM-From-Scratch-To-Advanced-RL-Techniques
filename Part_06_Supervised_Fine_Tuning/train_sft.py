@@ -8,7 +8,7 @@ torch.manual_seed(0)
 import sys
 from pathlib import Path as _P
 sys.path.append(str(_P(__file__).resolve().parents[1]/'Part_03_Modernizing_The_Architecture'))
-from model_modern import GPTModern  # noqa: E402
+from model_modern import GPTModern
 
 from dataset_sft import load_tiny_hf
 from collator_sft import SFTCollator
