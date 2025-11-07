@@ -20,7 +20,6 @@ Both share the subword “low”, making it easier for the model to generalize.
 
 """
 
-
 from __future__ import annotations
 import os, json
 from pathlib import Path
@@ -30,6 +29,7 @@ try:
     from tokenizers import ByteLevelBPETokenizer, Tokenizer
 except Exception:
     ByteLevelBPETokenizer = None
+
 
 class BPETokenizer:
     """
