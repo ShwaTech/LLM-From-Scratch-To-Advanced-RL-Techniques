@@ -8,7 +8,7 @@ import shutil
 import torch.nn as nn
 
 import sys
-sys.path.append(str(Path(__file__).resolve().parents[1]/'part_3'))
+sys.path.append(str(Path(__file__).resolve().parents[1]/'Part_03_Modernizing_The_Architecture'))
 
 
 DEF_NAME = "model_last.pt"
@@ -282,7 +282,7 @@ def save_checkpoint(
         "amp_scaler": amp.scaler.state_dict() if amp and getattr(amp, "scaler", None) else None,
         "step": int(step),
         "config": cfg,   # ← always write config
-        "version": "part4-v2",
+        "version": "scalingup-v2",
     }, out / DEF_NAME)
     
     if tokenizer_dir is not None:
