@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
         "./Part_04_Scaling_Up",
         "./Part_02_Training_A_Tiny_LLM",
-        "./Part_03_Modernizing_The_Architecture"
+        "./Part_03_Modernizing_The_Architecture",
+        "./Part_06_Supervised_Fine_Tuning"
     ]
 }
