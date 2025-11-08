@@ -1,3 +1,44 @@
+"""
+
+✍️ 1. What Happens During SFT ?
+During Supervised Fine-Tuning, you take:
+    1. a base pretrained model, and
+    2. a dataset of prompt–response pairs (instruction + ideal answer),
+and train the model again — but with supervision (like a teacher grading it).
+
+🎯 2. The Objective ?
+You train the model so that:
+    When it sees the prompt, it predicts the response token by token.
+This is just a causal language modeling (next-token prediction) loss, but applied to instruction-formatted data.
+
+⚙️ 3. The Training Process
+Input formatting — Combine prompt + response:
+    <bos> User: Explain AI simply. <eos>
+    Assistant: AI means teaching computers to learn from data. <eos>
+Training steps:
+1. Tokenize it using the model’s tokenizer.
+2. Mask: Only compute loss on the response part (not on the prompt).
+3. Compute cross-entropy loss between predicted and true tokens.
+4. Backpropagate & update weights.
+So the model learns how to respond to prompts like a human tutor would.
+
+💡 4. Why It Matters
+Pretrained models just predict text continuation — they don’t “follow instructions.”
+SFT teaches them to:
+    1. Follow human-style prompts.
+    2. Respond in structured, helpful, safe ways.
+    3. Understand chat-like input/output patterns.
+Essentially, SFT turns a raw LLM into an assistant.
+
+📊 After SFT, the Model Can:
+✅ Follow structured instructions
+✅ Stay on-topic
+✅ Produce coherent responses
+✅ Be used as a policy model for PPO, RLHF or GRPO
+
+"""
+
+
 from __future__ import annotations
 from typing import List, Tuple
 import torch
@@ -6,12 +47,14 @@ import traceback
 # Reuse tokenizers: prefer BPE from Part 4 if available; else byte-level from Part 3
 import sys
 from pathlib import Path as _P
+
 sys.path.append(str(_P(__file__).resolve().parents[1]/'Part_04_Scaling_Up'))
 try:
     from tokenizer_bpe import BPETokenizer
     _HAS_BPE = True
 except Exception:
     _HAS_BPE = False
+
 sys.path.append(str(_P(__file__).resolve().parents[1]/'Part_03_Modernizing_The_Architecture'))
 try:
     from tokenizer import ByteTokenizer
