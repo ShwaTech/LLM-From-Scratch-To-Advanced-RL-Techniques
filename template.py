@@ -12,6 +12,7 @@ part_3 = "Part_03_Modernizing_The_Architecture"
 part_4 = "Part_04_Scaling_Up"
 part_5 = "Part_05_Mixture_of_Experts"
 part_6 = "Part_06_Supervised_Fine_Tuning"
+part_7 = "Part_07_Reward_Modeling"
 
 
 
@@ -92,6 +93,16 @@ list_of_files = [
     f"{part_6}/sample_sft.py",
     f"{part_6}/tests/test_formatter.py",
     f"{part_6}/tests/test_masking.py",
+    
+    f"{part_7}/orchestrator.py",
+    f"{part_7}/data_prefs.py",
+    f"{part_7}/collator_rm.py",
+    f"{part_7}/model_reward.py",
+    f"{part_7}/loss_reward.py",
+    f"{part_7}/train_rm.py",
+    f"{part_7}/eval_rm.py",
+    f"{part_7}/tests/test_bt_loss.py",
+    f"{part_7}/tests/test_reward_forward.py",
     
 ]
 
