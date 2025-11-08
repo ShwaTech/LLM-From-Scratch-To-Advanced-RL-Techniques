@@ -1,3 +1,24 @@
+"""
+
+Collator for preference pairs for Reward Modeling.
+
+🧠 In Simple Words
+The PairCollator takes human preference data (prompt, chosen, rejected) and tokenizes them into fixed-length
+tensors, making it easy to train a Reward Model that learns to score “good” responses higher than “bad” ones.
+
+🧾 Summary Table:
+Part	       | Purpose
+---------------|--------------------------------------------------------------
+Tokenizer      | Selection Chooses between BPE and ByteTokenizer
+_encode()	   | Converts text → list of token IDs
+collate()	   | Prepares (positive, negative) batches for RM training
+Padding	       | Ensures uniform input length
+Output	       | (pos, neg) tensors ready for model input
+------------------------------------------------------------------------------
+
+"""
+
+
 from __future__ import annotations
 from typing import List, Tuple
 import torch
