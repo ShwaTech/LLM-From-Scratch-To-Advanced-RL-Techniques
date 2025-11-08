@@ -106,6 +106,7 @@ list_of_files = [
     f"{part_7}/tests/test_reward_forward.py",
     
     f"{part_8}/orchestrator.py",
+    f"{part_8}/README.md",
     f"{part_8}/policy.py",
     f"{part_8}/rollout.py",
     f"{part_8}/ppo_loss.py",
