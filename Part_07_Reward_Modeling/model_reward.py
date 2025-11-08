@@ -34,6 +34,10 @@ The model thus learns to give higher scores to human-preferred responses.
 ✅ Foundation for DPO, PPO, RLHF, and RLAIF training
 ✅ Can be reused for RLAIF (AI Feedback) or constitutional AI
 
+Some Link for Reseach Papers:
+- https://arxiv.org/pdf/2410.12832
+- https://arxiv.org/pdf/2504.12328
+
 """
 
 
@@ -61,6 +65,8 @@ class RewardModel(nn.Module):
             activation='gelu',
             batch_first=True
         )
+        # TransformerEncoder: Encoder Only Transformer Architecture
+        # (Differs from Decoder we used in previous parts, it does not have any causal masking)
         self.encoder = nn.TransformerEncoder(enc_layer, num_layers=n_layer)
         self.ln = nn.LayerNorm(n_embd)
         self.head = nn.Linear(n_embd, 1)
@@ -70,7 +76,10 @@ class RewardModel(nn.Module):
         B, T = x.shape
         pos = torch.arange(T, device=x.device).unsqueeze(0)
         h = self.tok_emb(x) + self.pos_emb(pos)
+        
+        # perform masking only on padding tokens (as pad have token ID 2 - see collator)
         pad_mask = (x == 2)
+        
         h = self.encoder(h, src_key_padding_mask=pad_mask)
         h = self.ln(h)
         

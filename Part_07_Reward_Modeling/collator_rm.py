@@ -80,22 +80,30 @@ class PairCollator:
     def _encode(self, text: str) -> List[int]:
         if hasattr(self.tok, 'encode'):
             ids = self.tok.encode(text)
+            
             if isinstance(ids, torch.Tensor):
                 ids = ids.tolist()
+            
             return ids
+        
         return list(text.encode('utf-8'))
     
     
     def collate(self, batch: List[Tuple[str, str, str]]):
         # batch of (prompt, chosen, rejected)
         pos_ids, neg_ids = [], []
+        
         for prompt, chosen, rejected in batch:
             pos_text = format_example(Example(prompt, chosen))
             neg_text = format_example(Example(prompt, rejected))
+            
             pos_ids.append(self._encode(pos_text)[:self.block_size])
             neg_ids.append(self._encode(neg_text)[:self.block_size])
+        
         def pad_to(x, pad=2):
             return x + [pad] * (self.block_size - len(x)) if len(x) < self.block_size else x[:self.block_size]
+        
         pos = torch.tensor([pad_to(x) for x in pos_ids], dtype=torch.long)
         neg = torch.tensor([pad_to(x) for x in neg_ids], dtype=torch.long)
+        
         return pos, neg
