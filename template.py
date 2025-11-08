@@ -14,6 +14,7 @@ part_5 = "Part_05_Mixture_of_Experts"
 part_6 = "Part_06_Supervised_Fine_Tuning"
 part_7 = "Part_07_Reward_Modeling"
 part_8 = "Part_08_RLHF_with_PPO"
+part_9 = "Part_09_RLHF_with_GRPO"
 
 
 
@@ -114,6 +115,15 @@ list_of_files = [
     f"{part_8}/eval_ppo.py",
     f"{part_8}/tests/test_ppo_loss.py",
     f"{part_8}/tests/test_policy_forward.py",
+    
+    f"{part_9}/orchestrator.py",
+    f"{part_9}/README.md",
+    f"{part_9}/policy.py",
+    f"{part_9}/rollout.py",
+    f"{part_9}/grpo_loss.py",
+    f"{part_9}/train_grpo.py",
+    f"{part_9}/eval_grpo.py",
+    f"{part_9}/tests/test_grpo_loss.py",
     
 ]
 
