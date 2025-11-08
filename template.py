@@ -13,6 +13,7 @@ part_4 = "Part_04_Scaling_Up"
 part_5 = "Part_05_Mixture_of_Experts"
 part_6 = "Part_06_Supervised_Fine_Tuning"
 part_7 = "Part_07_Reward_Modeling"
+part_8 = "Part_08_RLHF_with_PPO"
 
 
 
@@ -104,6 +105,15 @@ list_of_files = [
     f"{part_7}/tests/test_bt_loss.py",
     f"{part_7}/tests/test_reward_forward.py",
     
+    f"{part_8}/orchestrator.py",
+    f"{part_8}/policy.py",
+    f"{part_8}/rollout.py",
+    f"{part_8}/ppo_loss.py",
+    f"{part_8}/train_ppo.py",
+    f"{part_8}/eval_ppo.py",
+    f"{part_8}/tests/test_ppo_loss.py",
+    f"{part_8}/tests/test_policy_forward.py",
+    
 ]
 
 
@@ -111,15 +121,15 @@ list_of_files = [
 for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
-
+    
     if filedir !="":
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"Creating directory; {filedir} for the file: {filename}")
-
+    
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
             pass
             logging.info(f"Creating empty file: {filepath}")
-
+    
     else:
         logging.info(f"{filename} is already exists")
