@@ -121,8 +121,8 @@ def sample_prompts(n: int) -> List[str]:
     if _load_ds is not None:
         try:
             ds = _load_ds("tatsu-lab/alpaca", split="train[:24]")
-            arr = []
             
+            arr = []
             for r in ds:
                 inst = (r.get('instruction') or '').strip()
                 inp = (r.get('input') or '').strip()
